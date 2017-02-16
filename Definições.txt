@@ -1,0 +1,4 @@
+JVM - Usado para rodar o byte code(.class) do java.
+
+[...].nextLine - Recebe uma string da entrada (teclado)
+[...].nextInt - Recebe um inteiro da entrada (teclado)
