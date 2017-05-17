@@ -1,0 +1,1 @@
+Essa pasta contem os codigos de tratamento de excecao das atividades: Venda e Seguradora.
