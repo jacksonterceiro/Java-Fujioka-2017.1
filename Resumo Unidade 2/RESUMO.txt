@@ -1,0 +1,13 @@
+1)POLIMORFISMO: Polimorfismo é uma característica em orientação a objetos que usa a hierarquia de objetos.
+
+2)ABSTRAÇÃO: Os objetos armazenam dados e possuem interface definida que determina o seu comportamento.
+
+3)ENCAPSULAMENTO:
+
+            É a característica do objeto de esconder seus dados e suas operações dos outros objetos. As operações e os dados são encapsulados em um módulo chamado classe que pode ser visto como um pattern para criar objetos (instanciação). O usuário não se preocupa com a implementação dos métodos, mas apenas com a interface da classe, alcançando um alto grau de desacoplamento, uma vez que é possível alterar a implementação de um método sem alterar a interface.
+
+            Segundo Edward Bernard: "Abstração e encapsulamento são definições distintas, porém estão fortemente relacionadas. Abstração é uma técnica que ajuda a identificar quais informações devem ser visíveis e quais não devem ser. Encapsulamento é a técnica para encapsular a informação de modo a esconder o que deve ser escondido e fazer visível o que deve ser visível."
+
+
+
+4)HERANÇA: Herança é um mecanismo importante quando um grupo de classes apresenta a mesma interface, mas a implementação interna dos métodos é diferente.
