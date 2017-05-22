@@ -1,85 +1,88 @@
-package br.unipe.java.seguradora;
+package br.unipe.java.seguradora1;
 
 public class Empresarial {
-	private Cliente cliente;
+	
 	private Float valorImovel;
 	private int numFuncionarios;
-	private int numVisitasDiarias;
-	private char ramo;
+	private int visitasDiarias;
+	private char ramo; //C - Comercio; I - Industria; A - Agropecuaria
+	
 	private Float valorSeguro;
 	
-	public void calculo(){
-		setValorSeguro((getValorImovel() * 4.0f) + getValorSeguro());
+	public Empresarial(){
+		//Isso é correto??
+	}
+	
+	public Empresarial(Float valorImovel, int numFuncionarios, int visitasDiarias, char ramo){
+		this.valorImovel = valorImovel;
+		this.numFuncionarios = numFuncionarios;
+		this.visitasDiarias = visitasDiarias;
+		this.ramo = ramo; //I - Industria; C - Comercio;
+	}
+	
+	public void calcularSeguro(){
+		Float valorSeguro = 0f;
 		
+		valorSeguro = getValorImovel() * 0.04f;
+				
+		//A cada 10 funcionarios + 0.2%;
 		for(int count = 0; count <= getNumFuncionarios(); count+=10){
-			setValorSeguro((getValorImovel() * 0.2f) + getValorSeguro());
+			valorSeguro += getValorImovel() * 0.002f;
 		}
-		for(int count = 0; count <= getNumVisitasDiarias(); count+=200){
-			setValorSeguro((getValorImovel() * 0.3f) + getValorSeguro());
+		
+		//A cada 200 visitas diarias + 0.3%;
+		for(int count = 0; count <= getVisitasDiarias(); count+=200){
+			valorSeguro += getValorImovel() * 0.003f;
 		}
-		if(getRamo() == 'I'){
-			setValorSeguro((getValorImovel() * 1.0f) + getValorSeguro());
-		}
-		if(getRamo() == 'C'){
-			setValorSeguro((getValorImovel() * 0.5f) + getValorSeguro());
-		}
+		
+		valorSeguro += (getRamo() == 'I') ? getValorImovel() * 0.01f : getValorImovel() * 0.005f;
+		
+		setValorSeguro(valorSeguro);
 		
 	}
 	
 	
-	public Cliente getCliente() {
-		return cliente;
+
+	public Float getValorImovel() {
+		return valorImovel;
 	}
 
-
-	public void setCliente(Cliente cliente) {
-		this.cliente = cliente;
+	public void setValorImovel(Float valorImovel) {
+		this.valorImovel = valorImovel;
 	}
 
+	public int getNumFuncionarios() {
+		return numFuncionarios;
+	}
+
+	public void setNumFuncionarios(int numFuncionarios) {
+		this.numFuncionarios = numFuncionarios;
+	}
+
+	public int getVisitasDiarias() {
+		return visitasDiarias;
+	}
+
+	public void setVisitasDiarias(int visitasDiarias) {
+		this.visitasDiarias = visitasDiarias;
+	}
+
+	public char getRamo() {
+		return ramo;
+	}
+
+	public void setRamo(char ramo) {
+		this.ramo = ramo;
+	}
 
 	public Float getValorSeguro() {
 		return valorSeguro;
 	}
 
-
 	public void setValorSeguro(Float valorSeguro) {
 		this.valorSeguro = valorSeguro;
 	}
-
-
-	public Float getValorImovel() {
-		return valorImovel;
-	}
-	public void setValorImovel(Float valorImovel) {
-		this.valorImovel = valorImovel;
-	}
-	public int getNumFuncionarios() {
-		return numFuncionarios;
-	}
-	public void setNumFuncionarios(int numFuncionarios) {
-		this.numFuncionarios = numFuncionarios;
-	}
-	public int getNumVisitasDiarias() {
-		return numVisitasDiarias;
-	}
-	public void setNumVisitasDiarias(int numVisitasDiarias) {
-		this.numVisitasDiarias = numVisitasDiarias;
-	}
-	/*
-	 * C - Comércio
-	 * I - Industria
-	 * A - Agropecuaria 
-	 */
-	public char getRamo() {
-		return ramo;
-	}
-	/*
-	 * C - Comércio
-	 * I - Industria
-	 * A - Agropecuaria
-	 */
-	public void setRamo(char ramo) {
-		this.ramo = ramo;
-	}
+	
+	
 
 }

@@ -1,88 +1,74 @@
-package br.unipe.java.seguradora;
+package br.unipe.java.seguradora1;
 
 public class Residencial {
-	private Cliente cliente;
+	
 	private String endereco;
 	private Float valorImovel;
-	private char zona;
-	private char tipoResidencia;
+	private char zona; //U - Urbana; R - Rural
+	private char residencia; //A - Apartamento; C - Casa
+	
 	private Float valorSeguro;
 	
-	
-	public void calculo(){
-		setValorSeguro((getValorImovel() * 2.0f) + getValorSeguro());
-	
-		if(getZona() == 'U'){
-			setValorSeguro((getValorImovel() * 1.0f) + getValorSeguro());
-		}
-		if(getZona() == 'S' || getZona() == 'C'){
-			setValorSeguro((getValorImovel() * 0.5f) + getValorSeguro());
-		}
+	public Residencial(){
 		
 	}
 	
+	public Residencial(String endereco, Float valorImovel, char zona, char residencia){
+		this.endereco = endereco;
+		this.valorImovel = valorImovel;
+		this.zona = zona;
+		this.residencia = residencia;
+	}
 	
-	public Cliente getCliente() {
-		return cliente;
+	public void calcularSeguro(){
+		Float valorSeguro = 0f;
+		
+		valorSeguro = getValorImovel() * 0.02f;
+		//getZona ou this.zona?
+		valorSeguro += (getZona() == 'U') ? getValorImovel() * 0.01f : getValorImovel() * 0.005f;
+		setValorSeguro(valorSeguro);
 	}
-
-
-	public void setCliente(Cliente cliente) {
-		this.cliente = cliente;
+	
+	
+	
+	public String getEndereco() {
+		return endereco;
 	}
-
+	
+	public void setEndereco(String endereco) {
+		this.endereco = endereco;
+	}
+	
+	public Float getValorImovel() {
+		return valorImovel;
+	}
+	
+	public void setValorImovel(Float valorImovel) {
+		this.valorImovel = valorImovel;
+	}
+	
+	public char getZona() {
+		return zona;
+	}
+	
+	public void setZona(char zona) {
+		this.zona = zona;
+	}
+	
+	public char getResidencia() {
+		return residencia;
+	}
+	
+	public void setResidencia(char residencia) {
+		this.residencia = residencia;
+	}
 
 	public Float getValorSeguro() {
 		return valorSeguro;
 	}
 
-
 	public void setValorSeguro(Float valorSeguro) {
 		this.valorSeguro = valorSeguro;
-	}
-
-
-	public String getEndereco() {
-		return endereco;
-	}
-	public void setEndereco(String endereco) {
-		this.endereco = endereco;
-	}
-	public Float getValorImovel() {
-		return valorImovel;
-	}
-	public void setValorImovel(Float valorImovel) {
-		this.valorImovel = valorImovel;
-	}
-	/*
-	 * U - Urbana
-	 * S - Suburbana
-	 * R - Rural
-	 */
-	public char getZona() {
-		return zona;
-	}
-	/*
-	 * U - Urbana
-	 * S - Suburbana
-	 * R - Rural
-	 */
-	public void setZona(char zona) {
-		this.zona = zona;
-	}
-	/*
-	 * C - Casa
-	 * A - Apartamento
-	 */
-	public char getTipoResidencia() {
-		return tipoResidencia;
-	}
-	/*
-	 * C - Casa
-	 * A - Apartamento
-	 */
-	public void setTipoResidencia(char tipoResidencia) {
-		this.tipoResidencia = tipoResidencia;
 	}
 	
 	
