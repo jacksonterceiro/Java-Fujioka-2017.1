@@ -1,4 +1,4 @@
-package br.unipe.java.venda;
+package br.unipe.java.venda1;
 
 public class Venda {
 	
@@ -65,7 +65,11 @@ public class Venda {
 	}
 	
 	public void setProduto(Produto produto) {
-		this.produto = produto;
+		try{
+			this.produto = produto;
+		} catch(Exception e){
+			System.out.println("Erro setProduto");
+		}
 	}
 	
 	public Vendedor getVendedor() {
@@ -73,7 +77,11 @@ public class Venda {
 	}
 	
 	public void setVendedor(Vendedor vendedor) {
-		this.vendedor = vendedor;
+		try{
+			this.vendedor = vendedor;
+		} catch(Exception e){
+			System.out.println("Erro setVendedor");
+		}
 	}
 	
 	public Float getDesconto() {
@@ -81,7 +89,11 @@ public class Venda {
 	}
 	
 	public void setDesconto(Float desconto) {
-		this.desconto = desconto;
+		try{
+			this.desconto = desconto;
+		} catch(Exception e){
+			System.out.println("Erro setDesconto");
+		}
 	}
 	
 	public int getQuantidadeItens() {
@@ -89,7 +101,11 @@ public class Venda {
 	}
 	
 	public void setQuantidadeItens(int quantidadeItens) {
-		this.quantidadeItens = quantidadeItens;
+		try{
+			this.quantidadeItens = quantidadeItens;
+		} catch(Exception e){
+			System.out.println("Erro setQuantidadeItens");
+		}
 	}
 	
 	public Float getValor() {
@@ -97,9 +113,12 @@ public class Venda {
 	}
 	
 	public void setValor(Float valor) {
-		this.valor = valor;
+		try{
+			this.valor = valor;
+		} catch(Exception e){
+			System.out.println("Erro setValor");
+		}
 	}
-	
 	
 
 

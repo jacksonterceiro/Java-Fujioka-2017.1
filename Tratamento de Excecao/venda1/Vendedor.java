@@ -1,4 +1,4 @@
-package br.unipe.java.venda;
+package br.unipe.java.venda1;
 
 public class Vendedor {
 	private String nome;
@@ -22,7 +22,11 @@ public class Vendedor {
 
 
 	public void setPorcentagemComissao(Float porcentagemComissao) {
-		this.porcentagemComissao = porcentagemComissao;
+		try{
+			this.porcentagemComissao = porcentagemComissao;
+		} catch(Exception e){
+			System.out.println("Erro setPorcentagemComissao");
+		}
 	}
 
 
@@ -31,7 +35,11 @@ public class Vendedor {
 	}
 
 	public void setNome(String nome) {
-		this.nome = nome;
+		try{
+			this.nome = nome;
+		} catch(Exception e){
+			System.out.println("Erro setNome");
+		}
 	}
 
 	public String getCodigo() {
@@ -39,7 +47,11 @@ public class Vendedor {
 	}
 
 	public void setCodigo(String codigo) {
-		this.codigo = codigo;
+		try{
+			this.codigo = codigo;
+		} catch(Exception e){
+			System.out.println("Erro setCodigo");
+		}
 	}
 
 
@@ -49,7 +61,11 @@ public class Vendedor {
 
 
 	public void setComissao(Float comissao) {
-		this.comissao = comissao;
+		try{
+			this.comissao = comissao;
+		} catch(Exception e){
+			System.out.println("Erro setComissao");
+		}
 	}
 
 
@@ -58,7 +74,11 @@ public class Vendedor {
 	}
 
 	public void setEndereco(String endereco) {
-		this.endereco = endereco;
+		try{
+			this.endereco = endereco;
+		} catch(Exception e){
+			System.out.println("Erro setEndereco");
+		}
 	}
 	
 	

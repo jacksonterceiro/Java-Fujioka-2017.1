@@ -1,4 +1,4 @@
-package br.unipe.java.venda;
+package br.unipe.java.venda1;
 
 public class Main {
 

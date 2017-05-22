@@ -1,4 +1,4 @@
-package br.unipe.java.venda;
+package br.unipe.java.venda1;
 
 public class Produto {
 	private String codigo;
@@ -20,7 +20,12 @@ public class Produto {
 	}
 
 	public void setCodigo(String codigo) {
-		this.codigo = codigo;
+		try{
+			this.codigo = codigo;
+		} catch(Exception e){
+			System.out.println("Erro setCodigo");
+		}
+		
 	}
 
 	public String getDescricao() {
@@ -28,7 +33,11 @@ public class Produto {
 	}
 
 	public void setDescricao(String descricao) {
-		this.descricao = descricao;
+		try{
+			this.descricao = descricao;
+		} catch(Exception e){
+			System.out.println("Erro setDescricao");
+		}
 	}
 
 	public Float getValorVenda() {
@@ -36,7 +45,11 @@ public class Produto {
 	}
 
 	public void setValorVenda(Float valorVenda) {
-		this.valorVenda = valorVenda;
+		try{
+			this.valorVenda = valorVenda;
+		} catch(Exception e){
+			System.out.println("Erro setValorVenda");
+		}
 	}
 
 	public Float getValorCusto() {
@@ -44,7 +57,11 @@ public class Produto {
 	}
 
 	public void setValorCusto(Float valorCusto) {
-		this.valorCusto = valorCusto;
+		try{
+			this.valorCusto = valorCusto;
+		} catch(Exception e){
+			System.out.println("Erro setValorCusto");
+		}
 	}
 
 	public boolean isPromocao() {
@@ -52,7 +69,11 @@ public class Produto {
 	}
 
 	public void setPromocao(boolean promocao) {
-		this.promocao = promocao;
+		try{
+			this.promocao = promocao;
+		} catch(Exception e){
+			System.out.println("Erro setValorCusto");
+		}
 	}
 	
 	
