@@ -9,9 +9,7 @@ public class Residencial {
 	
 	private Float valorSeguro;
 	
-	public Residencial(){
-		
-	}
+	public Residencial(){}
 	
 	public Residencial(String endereco, Float valorImovel, char zona, char residencia){
 		this.endereco = endereco;
@@ -24,7 +22,6 @@ public class Residencial {
 		Float valorSeguro = 0f;
 		
 		valorSeguro = getValorImovel() * 0.02f;
-		//getZona ou this.zona?
 		valorSeguro += (getZona() == 'U') ? getValorImovel() * 0.01f : getValorImovel() * 0.005f;
 		setValorSeguro(valorSeguro);
 	}

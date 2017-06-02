@@ -9,9 +9,7 @@ public class Empresarial {
 	
 	private Float valorSeguro;
 	
-	public Empresarial(){
-		//Isso é correto??
-	}
+	public Empresarial(){}
 	
 	public Empresarial(Float valorImovel, int numFuncionarios, int visitasDiarias, char ramo){
 		this.valorImovel = valorImovel;

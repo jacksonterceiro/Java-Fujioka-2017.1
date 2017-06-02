@@ -2,20 +2,34 @@ package br.unipe.java.seguradora1;
 
 public class Cliente {
 	
-	private char tipo;
+	private char tipo; //F - Pessoa Fisica | J - Pessoa Juridica
 	private String nome;
 	private Residencial residencial;
 	private Empresarial empresarial;
 
+	
+	public Cliente(){}
+	
+	public Cliente(char tipo, String nome, Residencial residencial) {
+		this.tipo = tipo;
+		this.nome = nome;
+		this.residencial = residencial;
+	}
+	
+	public Cliente(char tipo, String nome, Empresarial empresarial) {
+		this.tipo = tipo;
+		this.nome = nome;
+		this.empresarial = empresarial;
+	}
+	
+	
+	
+	
+	
 	public char getTipo() {
 		return tipo;
 	}
-
-	//TODO: Colocar tratamento de erro aqui; So entra passa se for um char.
-	/**
-	* F - Pessoa Fisica
-	* J - Pessoa Juridica
-	*/
+	
 	public void setTipo(char tipo) {
 		this.tipo = tipo;
 	}
