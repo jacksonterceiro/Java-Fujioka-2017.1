@@ -11,6 +11,13 @@ public class Residencial {
 	
 	public Residencial(){}
 	
+	/**
+	 * Construtor setando todos os objetos;
+	 * @param endereco
+	 * @param valorImovel
+	 * @param zona
+	 * @param residencia
+	 */
 	public Residencial(String endereco, Float valorImovel, char zona, char residencia){
 		this.endereco = endereco;
 		this.valorImovel = valorImovel;
@@ -18,6 +25,9 @@ public class Residencial {
 		this.residencia = residencia;
 	}
 	
+	/**
+	 * Realiza calculo do seguro, dados informado pelo usuario. 
+	 */
 	public void calcularSeguro(){
 		Float valorSeguro = 0f;
 		

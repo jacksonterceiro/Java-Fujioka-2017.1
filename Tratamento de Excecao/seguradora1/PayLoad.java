@@ -4,6 +4,12 @@ import java.util.ArrayList;
 
 public class PayLoad {
 	
+	/**
+	 * Recebe Cliente e monta payLoad com os dados contidos em Cliente;
+	 * @param cliente
+	 * @return
+	 * @throws InterruptedException
+	 */
 	public static String montaPayLoad(Cliente cliente) throws InterruptedException{
 		String PayLoad = "";
 		
@@ -41,6 +47,11 @@ public class PayLoad {
 		return PayLoad;
 	}
 	
+	/**
+	 * Converte um arrayList de protocolos em um arrayList da classe Cliente;
+	 * @param lista
+	 * @return
+	 */
 	public static ArrayList<Cliente> montaArrayDeCliente(ArrayList<String> lista){
 		/*String frase = "nome;teste;10";
 		String array[] = new String[3];
@@ -52,11 +63,11 @@ public class PayLoad {
 		ArrayList<Cliente> arrayCliente = new ArrayList<Cliente>();
 		
 		for(String payLoad : lista){
-			System.out.println(payLoad);
+			//System.out.println(payLoad);
 			
 			array = payLoad.split("ø");
 			
-			System.out.println(array[0]);
+			//System.out.println(array[0]);
 
 			if(array[0].equals("F")){
 				

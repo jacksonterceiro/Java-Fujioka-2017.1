@@ -33,13 +33,19 @@ import java.util.ArrayList;
 
 public class Arquivo {
 	
-	public static void addArquivo(String texto){
+	/**
+	 * Cria ou nao um arquivo de log.
+	 * Adiciona um texto na primeira linha do arquivo caso seja criado
+	 * ou abaixo da ultima linha caso nao seja criado.
+	 * @param texto
+	 */
+	public static void addArquivo(String texto, String nomeArquivo){
 		try {
 			boolean logExiste = false;
-			File file =  new File("log.txt");
+			File file =  new File(nomeArquivo);
 			logExiste = file.exists();
 			
-			FileWriter fw = new FileWriter("log.txt", true);
+			FileWriter fw = new FileWriter(nomeArquivo, true);
 			BufferedWriter bw = new BufferedWriter(fw);
 			
 			if (logExiste)
@@ -57,22 +63,32 @@ public class Arquivo {
 			}
 	}
 	
-	public static boolean logExiste() throws InterruptedException{
-		File file =  new File("log.txt");
+	/**
+	 * Verifica se o arquivo com o nome 'log.txt' existe;
+	 * @return
+	 * @throws InterruptedException
+	 */
+	public static boolean logExiste(String nomeArquivo) throws InterruptedException{
+		File file =  new File(nomeArquivo);
 		if(!file.exists()){
-			System.out.println("Nenhum contrato cadastrado.");
+			System.out.print("\nNenhum contrato cadastrado.");
 			Thread.sleep(3000);
 			return false;
 		}
 		return true;
 	}
 	
-	public static ArrayList<String> lerArquivo() {
+	/**
+	 * Realiza uma leitura do arquivo 'log.txt' e retorna um arraList
+	 * com os protocolos contidos no arquivo.
+	 * @return
+	 */
+	public static ArrayList<String> lerArquivo(String nomeArquivo) {
 		String payLoad = "";
 		ArrayList<String> lista = new ArrayList<String>();
 		
 			try{
-				FileReader fr = new FileReader("log.txt");
+				FileReader fr = new FileReader(nomeArquivo);
 				BufferedReader br = new BufferedReader(fr);
 				
 				while(true){
@@ -95,6 +111,39 @@ public class Arquivo {
 			}
 			
 			return lista;
+	}
+	
+	/**
+	 * Recebe um arrayList e cria um novo arquivo com todos os protocolos;
+	 * @param array
+	 * @throws InterruptedException
+	 */
+	public static void salvaArrayListArquivo(ArrayList<Cliente> array, String nomeArquivo) throws InterruptedException{
+		String payLoad = "";
+		
+		deletaArquivo(nomeArquivo);
+		
+		for (Cliente cliente1 : array) {
+			//Armazena dados em arquivo.
+			payLoad = PayLoad.montaPayLoad(cliente1);
+			Arquivo.addArquivo(payLoad, nomeArquivo);
+		}
+		
+		
+	}
+	
+	/**
+	 * Deleta um arquivo existente.
+	 */
+	public static void deletaArquivo(String nomeArquivo){
+		boolean logExiste = false;
+		
+		File file =  new File(nomeArquivo);
+		logExiste = file.exists();
+		
+		if(logExiste){
+			file.delete();
+		}
 	}
 
 }
